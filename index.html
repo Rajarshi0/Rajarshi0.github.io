@@ -1,106 +1,123 @@
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background: linear-gradient(120deg, #f6d365, #fda085);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajarshi Mondal - Bioinformatician</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Rajarshi Mondal</h1>
+            <p class="subtitle">Bioinformatician | Genomics | Research Enthusiast</p>
+            <p class="contact-info">
+                📧 <a href="mailto:rajarshimondal92@gmail.com">rajarshimondal92@gmail.com</a> |
+                📞 +91 7001750048 |
+                🌐 <a href="https://linkedin.com/in/rajarshi-mondal">LinkedIn</a>
+            </p>
+        </div>
+    </header>
 
-header {
-    background: #ff6f61;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
+    <nav>
+        <div class="container">
+            <ul class="navigation">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Results-driven bioinformatician with a solid understanding of computational biology and genomic analysis. Experienced in programming languages, data manipulation, and automation of bioinformatics workflows. Passionate about advancing precision medicine and drug discovery.</p>
+        </div>
+    </section>
 
-header .subtitle {
-    margin: 10px 0;
-    font-size: 1.2em;
-    font-style: italic;
-}
+    <section id="expertise">
+        <div class="container">
+            <h2>Areas of Expertise</h2>
+            <ul>
+                <li>Biological Data Analysis</li>
+                <li>Computational Biology Applications</li>
+                <li>Custom Analytical Pipeline Development</li>
+                <li>Bioinformatics Tool Development</li>
+                <li>Genomic Variant Interpretation</li>
+            </ul>
+        </div>
+    </section>
 
-header .contact-info a {
-    color: #ffe6e2;
-    text-decoration: none;
-}
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="job">
+                <h3>Research Assistant</h3>
+                <p>IIIT Delhi, India | Aug 2024 – Present</p>
+                <ul>
+                    <li>Working on 3D Genomics and Single-cell Genomics.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Junior Bioinformatician</h3>
+                <p>Unipath Laboratories, India | Sep 2023 – Jul 2024</p>
+                <ul>
+                    <li>Developed Whole Exome Sequencing (WES) pipelines with advanced CNV analysis.</li>
+                    <li>Automated NGS analysis pipelines using bash scripting.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-nav {
-    background: #ff9a8b;
-    padding: 10px 0;
-}
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <ul>
+                <li>MSc in Bioinformatics, Pondicherry University, India (2021 – 2023)</li>
+                <li>BSc in Biotechnology, The University of Burdwan, India (2018 – 2021)</li>
+            </ul>
+        </div>
+    </section>
 
-nav .navigation {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
+    <section id="projects">
+        <div class="container">
+            <h2>Key Projects</h2>
+            <ul>
+                <li>Master's Project: Investigated CML mechanisms and identified significant driver mutations.</li>
+                <li>HackBio Project: Conducted eQTL analysis for Alzheimer’s Disease using PathfindR.</li>
+            </ul>
+        </div>
+    </section>
 
-nav .navigation li {
-    margin: 0 15px;
-}
+    <section id="publications">
+        <div class="container">
+            <h2>Publications</h2>
+            <ul>
+                <li><a href="https://doi.org/10.1038/s41467-024-53260-y" target="_blank">The GIAB genomic stratifications resource for human reference genomes</a> - Nature Communications</li>
+                <li><a href="https://doi.org/10.12688/f1000research.110194.1" target="_blank">The Third International Hackathon Paper</a> - F1000Research</li>
+                <li>Integrative eQTL Analysis of Gene Expression and Metabolic Pathways Associated with Alzheimer's Disease - Preprint</li>
+                <li>SNBNCBS Thesis: Predicting the Efficiency of Drug Molecules: An In-Silico Approach Using Molecular Docking and Simulation</li>
+            </ul>
+        </div>
+    </section>
 
-nav .navigation a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:rajarshimondal92@gmail.com">rajarshimondal92@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/rajarshi-mondal">Rajarshi Mondal</a></p>
+        </div>
+    </section>
 
-nav .navigation a:hover {
-    background: #ff6f61;
-}
-
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px;
-}
-
-section {
-    margin: 20px 0;
-}
-
-h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #ff6f61;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    background: #fff;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.job {
-    margin-bottom: 20px;
-}
-
-footer {
-    background: #ff6f61;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rajarshi Mondal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
