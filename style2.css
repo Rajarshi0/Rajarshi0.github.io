@@ -1,76 +1,194 @@
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    background: linear-gradient(120deg, #f6d365, #fda085);
+    color: #ffffff;
+    background: #1e1e2f;
+    background-image: url('https://www.transparenttextures.com/patterns/hexellence.png'); /* Pentagonal pattern */
+    background-size: auto;
+    line-height: 1.6;
 }
 
+a {
+    color: #00d4ff; /* Vibrant cyan for links */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #ff4081; /* Bright pink for hover */
+}
+
+/* Header Styles */
 header {
-    background: #ff6f61;
-    color: #fff;
-    padding: 20px 0;
+    background: linear-gradient(135deg, #1f1c2c, #928dab); /* Dark gradient */
+    color: #ffffff;
+    padding: 50px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 header h1 {
+    font-size: 4em;
     margin: 0;
-    font-size: 2.5em;
+    color: #00d4ff; /* Neon cyan */
+    text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
 }
 
 header .subtitle {
-    margin: 10px 0;
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-style: italic;
+    margin-top: 10px;
+    color: #ff4081; /* Neon pink */
 }
 
 header .contact-info a {
-    color: #ffe6e2;
-    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    margin: 0 10px;
 }
 
+header .contact-info a:hover {
+    color: #ff4081;
+}
+
+/* Navigation Styles */
+nav {
+    background: #15151e; /* Midnight black */
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    color: #00d4ff;
+    border-bottom: 2px solid #00d4ff;
+}
+
+/* Section Styles */
 .container {
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
     margin: auto;
-    overflow: hidden;
-    padding: 20px;
+    padding: 40px 20px;
+    background: rgba(30, 30, 47, 0.8); /* Semi-transparent dark background */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 section {
-    margin: 20px 0;
+    margin: 50px 0;
 }
 
 h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #ff6f61;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #00d4ff;
+    border-bottom: 3px solid #ff4081;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 ul li {
-    background: #fff;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #252540;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #dcdcdc;
 }
 
-.job {
-    margin-bottom: 20px;
+ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
+.job h3 {
+    font-size: 1.5em;
+    color: #00d4ff;
+}
+
+.job p {
+    font-style: italic;
+    color: #ffffff;
+}
+
+/* Footer Styles */
 footer {
-    background: #ff6f61;
-    color: #fff;
+    background: linear-gradient(135deg, #1f1c2c, #928dab); /* Gradient */
+    color: #ffffff;
     text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 20px 0;
+    margin-top: 50px;
+    border-top: 2px solid #252540;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Pentagonal Background Elements (Optional) */
+body::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 212, 255, 0.15);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    animation: rotatePentagon 10s infinite linear;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 64, 129, 0.15);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    animation: rotatePentagon 10s infinite reverse linear;
+}
+
+@keyframes rotatePentagon {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
