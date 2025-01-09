@@ -3,73 +3,75 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    color: #ffffff;
-    background: #1e1e2f;
-    background-image: url('https://www.transparenttextures.com/patterns/hexellence.png'); /* Pentagonal pattern */
-    background-size: auto;
-    line-height: 1.6;
+    background: linear-gradient(120deg, #0f0f0f, #1a1a1a); /* Dark gradient */
+    color: #eaeaea;
+    line-height: 1.8;
+    overflow-x: hidden;
 }
 
 a {
-    color: #00d4ff; /* Vibrant cyan for links */
+    color: #1bc2d8; /* Vibrant cyan for links */
     text-decoration: none;
-    transition: all 0.3s ease;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 a:hover {
     color: #ff4081; /* Bright pink for hover */
+    transform: scale(1.1);
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #1f1c2c, #928dab); /* Dark gradient */
+    background: linear-gradient(135deg, #202020, #3a3a3a); /* Sleek dark gradient */
     color: #ffffff;
-    padding: 50px 20px;
+    padding: 60px 20px;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 header h1 {
-    font-size: 4em;
+    font-size: 4.5em;
     margin: 0;
-    color: #00d4ff; /* Neon cyan */
-    text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+    color: #1bc2d8;
+    text-shadow: 0 0 20px #1bc2d8, 0 0 30px #1bc2d8;
+    animation: glow 2s infinite alternate;
 }
 
 header .subtitle {
     font-size: 1.5em;
-    font-style: italic;
     margin-top: 10px;
-    color: #ff4081; /* Neon pink */
+    font-style: italic;
+    color: #ff4081;
+    text-shadow: 0 0 15px #ff4081, 0 0 25px #ff4081;
 }
 
-header .contact-info a {
-    font-weight: bold;
-    font-size: 1em;
-    margin: 0 10px;
+header .contact-info {
+    margin-top: 20px;
+    font-size: 1.2em;
 }
 
 header .contact-info a:hover {
-    color: #ff4081;
+    color: #ffe082; /* Warm yellow for hover */
 }
 
 /* Navigation Styles */
 nav {
-    background: #15151e; /* Midnight black */
+    background: #111111;
     padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -80,64 +82,69 @@ nav ul li a {
     color: #ffffff;
     font-size: 1.2em;
     text-transform: uppercase;
-    padding: 5px 10px;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
     border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #00d4ff;
-    border-bottom: 2px solid #00d4ff;
+    color: #1bc2d8;
+    border-bottom: 2px solid #1bc2d8;
 }
 
 /* Section Styles */
 .container {
-    width: 90%;
+    width: 85%;
     max-width: 1200px;
     margin: auto;
     padding: 40px 20px;
-    background: rgba(30, 30, 47, 0.8); /* Semi-transparent dark background */
+    background: rgba(255, 255, 255, 0.05); /* Frosted glass effect */
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 section {
-    margin: 50px 0;
+    margin: 60px 0;
+    position: relative;
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 3em;
     margin-bottom: 20px;
-    color: #00d4ff;
-    border-bottom: 3px solid #ff4081;
-    display: inline-block;
+    color: #1bc2d8;
+    border-bottom: 4px solid #ff4081;
     padding-bottom: 5px;
+    text-shadow: 0 0 10px #1bc2d8;
 }
 
 ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 ul li {
-    background: #252540;
+    background: #1e1e2e;
     margin: 15px 0;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #dcdcdc;
 }
 
 ul li:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .job h3 {
     font-size: 1.5em;
-    color: #00d4ff;
+    color: #ff4081;
 }
 
 .job p {
@@ -147,48 +154,50 @@ ul li:hover {
 
 /* Footer Styles */
 footer {
-    background: linear-gradient(135deg, #1f1c2c, #928dab); /* Gradient */
+    background: linear-gradient(135deg, #1e1e2e, #3a3a4f); /* Footer gradient */
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
-    margin-top: 50px;
+    margin-top: 60px;
     border-top: 2px solid #252540;
 }
 
 footer p {
     margin: 0;
+    font-size: 1em;
 }
 
-/* Pentagonal Background Elements (Optional) */
-body::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 300px;
-    height: 300px;
-    background: rgba(0, 212, 255, 0.15);
-    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-    animation: rotatePentagon 10s infinite linear;
-}
-
+/* Fancy Floating Background Elements */
+body::before,
 body::after {
     content: '';
     position: absolute;
-    bottom: -50px;
+    top: -50px;
     right: -50px;
-    width: 300px;
-    height: 300px;
-    background: rgba(255, 64, 129, 0.15);
-    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-    animation: rotatePentagon 10s infinite reverse linear;
+    width: 400px;
+    height: 400px;
+    background: rgba(27, 194, 216, 0.15);
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: floating 6s infinite alternate;
 }
 
-@keyframes rotatePentagon {
-    from {
-        transform: rotate(0deg);
-    }
+body::after {
+    left: -50px;
+    top: auto;
+    bottom: -50px;
+    background: rgba(255, 64, 129, 0.15);
+    animation-delay: 3s;
+}
+
+@keyframes glow {
     to {
-        transform: rotate(360deg);
+        text-shadow: 0 0 40px #1bc2d8, 0 0 60px #1bc2d8;
+    }
+}
+
+@keyframes floating {
+    to {
+        transform: translateY(30px);
     }
 }
