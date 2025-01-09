@@ -1,14 +1,26 @@
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #333;
-    background: linear-gradient(120deg, #f6d365, #fda085);
+    color: #eaeaea;
+    background: linear-gradient(120deg, #1a1a2e, #16213e); /* Dark gradient background */
 }
 
+a {
+    color: #ff6f61; /* Coral for links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffd700; /* Vibrant yellow for hover */
+    text-decoration: underline;
+}
+
+/* Header Styles */
 header {
-    background: #ff6f61;
+    background: linear-gradient(135deg, #ff6f61, #6a0572); /* Gradient for header */
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -17,11 +29,12 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5em;
+    text-shadow: 2px 2px 5px #000;
 }
 
 header .subtitle {
     margin: 10px 0;
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-style: italic;
 }
 
@@ -30,6 +43,11 @@ header .contact-info a {
     text-decoration: none;
 }
 
+header .contact-info a:hover {
+    color: #ffd700;
+}
+
+/* Section Styles */
 .container {
     width: 80%;
     max-width: 1200px;
@@ -44,8 +62,10 @@ section {
 
 h2 {
     font-size: 2em;
-    margin-bottom: 10px;
-    color: #ff6f61;
+    margin-bottom: 15px;
+    color: #ffd700; /* Vibrant yellow for headings */
+    border-bottom: 2px solid #ff6f61; /* Coral underline */
+    padding-bottom: 5px;
 }
 
 ul {
@@ -54,23 +74,40 @@ ul {
 }
 
 ul li {
-    background: #fff;
+    background: #282c34; /* Dark card background */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.job h3 {
+    font-size: 1.3em;
+    margin: 0;
+    color: #ff6f61; /* Coral for job titles */
+}
+
+.job p {
+    font-style: italic;
     margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.job {
-    margin-bottom: 20px;
-}
-
+/* Footer Styles */
 footer {
-    background: #ff6f61;
+    background: linear-gradient(135deg, #6a0572, #ff6f61); /* Footer gradient */
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 15px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
 }
