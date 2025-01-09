@@ -3,87 +3,110 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    background: linear-gradient(to bottom right, #1f1c2c, #928dab);
     color: #ffffff;
-    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364); /* Stylish dark gradient */
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 a {
-    color: #ff6f61; /* Coral links */
+    color: #ff9f43; /* Vibrant orange */
     text-decoration: none;
-    transition: all 0.3s ease;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 a:hover {
-    color: #ffd700; /* Vibrant yellow hover effect */
-    text-decoration: underline;
+    color: #feca57;
+    transform: scale(1.1);
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #ff6f61, #ff9966); /* Funky header gradient */
+    background: linear-gradient(to right, #ff6a95, #ff9671);
     color: #fff;
-    padding: 30px 0;
+    padding: 50px 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
 }
 
 header h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     margin: 0;
-    text-shadow: 2px 2px 5px #000;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    animation: slideInFromLeft 1s ease;
 }
 
 header .subtitle {
-    margin: 10px 0;
     font-size: 1.4em;
     font-style: italic;
+    margin: 10px 0 20px;
+    animation: fadeIn 2s ease;
 }
 
 header .contact-info a {
-    font-weight: bold;
+    font-size: 1em;
+    margin: 0 10px;
 }
 
-header .contact-info a:hover {
-    color: #ffe6b2;
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Navigation Styles */
 nav {
-    background: #16213e; /* Midnight blue for nav */
-    text-align: center;
-    padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    background: #2d3436;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-nav .navigation {
+nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
 }
 
-nav .navigation li {
-    margin: 0 15px;
+nav ul li {
+    margin: 0 20px;
 }
 
-nav .navigation a {
+nav ul li a {
     color: #ffffff;
     font-size: 1.2em;
+    text-transform: uppercase;
     padding: 5px 10px;
     border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-nav .navigation a:hover {
-    color: #ff6f61;
-    border-bottom: 2px solid #ff6f61;
+nav ul li a:hover {
+    color: #ff6a95;
+    border-bottom: 2px solid #ff6a95;
 }
 
 /* Section Styles */
 .container {
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
     margin: auto;
     padding: 20px;
@@ -95,11 +118,11 @@ section {
 
 h2 {
     font-size: 2.5em;
-    color: #ff6f61;
-    border-bottom: 3px solid #ffd700;
+    color: #ff9671;
+    border-bottom: 4px solid #feca57;
     display: inline-block;
+    padding-bottom: 5px;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 3px #000;
 }
 
 ul {
@@ -108,22 +131,22 @@ ul {
 }
 
 ul li {
-    background: #1a1a2e;
+    background: rgba(255, 255, 255, 0.1);
     margin: 10px 0;
     padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 ul li:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .job h3 {
     font-size: 1.5em;
-    color: #ffd700; /* Vibrant yellow */
+    color: #feca57;
     margin-bottom: 5px;
 }
 
@@ -134,12 +157,12 @@ ul li:hover {
 
 /* Footer Styles */
 footer {
-    background: linear-gradient(135deg, #ff6f61, #6a0572); /* Gradient for footer */
-    color: #ffffff;
+    background: linear-gradient(to right, #6a0572, #ff6a95);
+    color: #fff;
     text-align: center;
     padding: 20px 0;
+    position: relative;
     margin-top: 40px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
 }
 
 footer p {
@@ -147,20 +170,19 @@ footer p {
     font-size: 1em;
 }
 
-/* Add Funky Button Style (Optional) */
-button {
-    background: #ff6f61;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease;
+/* Funky Animations and Effects */
+@keyframes bounceIn {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
 }
 
-button:hover {
-    background: #ffd700;
-    transform: scale(1.1);
+header h1 {
+    animation: bounceIn 2s ease infinite;
 }
