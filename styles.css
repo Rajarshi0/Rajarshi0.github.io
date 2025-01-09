@@ -1,4 +1,5 @@
-/* Resetting all styles */
+/* Funky, vibrant, and cool style */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,116 +7,128 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #121212;
-    color: #f3f3f3;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle, #ff9a9e, #fad0c4, #fbc2eb);
+    color: #333;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
 header {
-    background: linear-gradient(45deg, #00C9FF, #92FE9D);
-    color: #121212;
+    background: linear-gradient(120deg, #a18cd1, #fbc2eb);
+    color: #fff;
     text-align: center;
-    padding: 50px 0;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    padding: 60px 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    animation: headerWave 8s infinite;
 }
 
 header h1 {
     font-size: 4em;
     font-weight: bold;
-    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 header p {
     font-size: 1.5em;
-    font-weight: 300;
+    margin-top: 10px;
+}
+
+@keyframes headerWave {
+    0%, 100% {
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+    50% {
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 0 90%);
+    }
 }
 
 nav {
+    background: rgba(255, 255, 255, 0.9);
     display: flex;
     justify-content: center;
-    gap: 15px;
-    background: #121212;
+    padding: 15px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 10;
-    padding: 10px;
-    border-bottom: 2px solid #00C9FF;
 }
 
 nav a {
-    color: #00C9FF;
+    color: #ff9a9e;
     text-decoration: none;
     font-size: 1.2em;
-    transition: color 0.3s, transform 0.3s;
+    font-weight: bold;
+    margin: 0 20px;
+    transition: transform 0.3s, color 0.3s;
 }
 
 nav a:hover {
-    color: #92FE9D;
-    transform: scale(1.1);
+    color: #fbc2eb;
+    transform: scale(1.2);
 }
 
 section {
-    padding: 50px 15px;
-    margin: 30px auto;
-    max-width: 1100px;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 40px auto;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 0.8s ease-in-out;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
 }
 
 section h2 {
     font-size: 2.5em;
-    color: #92FE9D;
-    text-align: center;
+    color: #a18cd1;
     margin-bottom: 20px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
     justify-content: center;
 }
 
 ul li {
-    background: linear-gradient(145deg, #2E2E2E, #1E1E1E);
-    color: #f3f3f3;
+    background: linear-gradient(135deg, #fad0c4, #fbc2eb);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     flex: 1 1 300px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 ul li:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 a {
-    color: #92FE9D;
+    color: #ff9a9e;
+    font-weight: bold;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #00C9FF;
+    color: #a18cd1;
 }
 
 footer {
-    background: #00C9FF;
-    color: #121212;
+    background: linear-gradient(120deg, #fad0c4, #a18cd1);
+    color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
     margin-top: 50px;
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
 }
 
 footer p {
@@ -123,18 +136,7 @@ footer p {
     font-weight: bold;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Adding cool animated background */
+/* Background animation */
 body::before {
     content: '';
     position: fixed;
@@ -143,9 +145,9 @@ body::before {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(45deg, #121212, #1E1E1E, #00C9FF, #92FE9D);
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
     background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
+    animation: gradientAnimation 10s ease infinite;
 }
 
 @keyframes gradientAnimation {
@@ -157,5 +159,16 @@ body::before {
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
