@@ -1,114 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funky Website - Rajarshi Mondal</title>
-    <link href="styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            text-align: center;
-            background: linear-gradient(to right, #ff758c, #fbc2eb);
-            padding: 50px 20px;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        header h1 {
-            font-size: 3em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 1.5em;
-            margin: 0;
-        }
-        section {
-            margin: 40px auto;
-            max-width: 900px;
-            padding: 20px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        section h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #ff758c;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 20px;
-        }
-        footer {
-            text-align: center;
-            background: linear-gradient(to right, #ff758c, #fbc2eb);
-            padding: 20px;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Rajarshi's World</h1>
-        <p>Bioinformatician | Creative Thinker | Coding Enthusiast</p>
-    </header>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi! I’m Rajarshi Mondal, a passionate bioinformatician with a knack for innovation. With a background in computational biology and a love for creative problem-solving, I’ve been exploring the intersection of technology and life sciences to drive impactful research.</p>
-        <img src="https://source.unsplash.com/600x400/?bioinformatics" alt="Bioinformatics Visualization" style="width:100%; border-radius:10px;">
-    </section>
+header {
+    background: linear-gradient(45deg, #34e89e, #0f3443);
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <ul>
-            <li>
-                <h3>Research Assistant at IIIT Delhi</h3>
-                <p>Explored 3D Genomics and Single-Cell Genomics to streamline research workflows.</p>
-            </li>
-            <li>
-                <h3>Junior Bioinformatician at Unipath Laboratories</h3>
-                <p>Designed advanced pipelines for genomic analysis, boosting precision medicine efforts.</p>
-            </li>
-        </ul>
-    </section>
+header h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li>
-                <h3>Chronic Myeloid Leukemia Study</h3>
-                <p>Investigated activation mechanisms and driver mutations in CML genomes.</p>
-            </li>
-            <li>
-                <h3>Alzheimer’s eQTL Analysis</h3>
-                <p>Conducted gene enrichment and pathway analyses for Alzheimer’s disease.</p>
-            </li>
-        </ul>
-    </section>
+header p {
+    font-size: 1.5em;
+    font-weight: 300;
+}
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:rajarshimondal92@gmail.com">rajarshimondal92@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/rajarshi-mondal/" target="_blank">Rajarshi Mondal</a></p>
-    </section>
+nav {
+    background: rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
 
-    <footer>
-        <p>&copy; 2025 Rajarshi Mondal. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #34e89e;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #34e89e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.8s ease-out;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section h2 {
+    font-size: 2.5em;
+    border-bottom: 4px solid #34e89e;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #0f3443;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: linear-gradient(135deg, #fad0c4, #fbc2eb);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+ul li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+a {
+    color: #34e89e;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff758c;
+}
+
+footer {
+    text-align: center;
+    background: linear-gradient(to right, #0f3443, #34e89e);
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 50px;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+}
+
+footer p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Background animation */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(-45deg, #121212, #1E1E1E, #00C9FF, #92FE9D);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
