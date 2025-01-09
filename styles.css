@@ -62,7 +62,6 @@ nav a {
     margin: 0 20px;
     transition: transform 0.3s, color 0.3s;
 }
-
 nav a:hover {
     color: #fbc2eb;
     transform: scale(1.2);
