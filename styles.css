@@ -1,144 +1,140 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Resetting all styles */
+* {
     margin: 0;
     padding: 0;
-    color: #333;
-    background: linear-gradient(to bottom, #1e3c72, #2a5298);
-    background-attachment: fixed;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #121212;
+    color: #f3f3f3;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 header {
-    background: linear-gradient(135deg, #34e89e, #0f3443);
-    color: #fff;
+    background: linear-gradient(45deg, #00C9FF, #92FE9D);
+    color: #121212;
     text-align: center;
     padding: 50px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
 header h1 {
-    font-size: 3.5em;
-    margin: 0;
+    font-size: 4em;
     font-weight: bold;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
 }
 
 header p {
-    margin: 10px 0;
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: 300;
 }
 
 nav {
-    background: rgba(0, 0, 0, 0.8);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-nav ul {
     display: flex;
     justify-content: center;
-    padding: 10px 0;
-    margin: 0;
-    list-style: none;
+    gap: 15px;
+    background: #121212;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 10px;
+    border-bottom: 2px solid #00C9FF;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
+nav a {
+    color: #00C9FF;
     text-decoration: none;
-    padding: 10px 20px;
-    display: inline-block;
-    border-radius: 25px;
-    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.2em;
+    transition: color 0.3s, transform 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: #34e89e;
+nav a:hover {
+    color: #92FE9D;
     transform: scale(1.1);
-    color: #000;
 }
 
 section {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.9);
+    padding: 50px 15px;
+    margin: 30px auto;
+    max-width: 1100px;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.8s ease-out;
-    backdrop-filter: blur(10px);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 section h2 {
     font-size: 2.5em;
-    border-bottom: 4px solid #34e89e;
-    display: inline-block;
-    padding-bottom: 10px;
+    color: #92FE9D;
+    text-align: center;
     margin-bottom: 20px;
-    color: #0f3443;
     text-transform: uppercase;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
 }
 
 ul li {
-    background: linear-gradient(135deg, #ff7eb3, #ff758c);
-    margin: 10px 0;
-    padding: 15px;
+    background: linear-gradient(145deg, #2E2E2E, #1E1E1E);
+    color: #f3f3f3;
+    padding: 20px;
     border-radius: 10px;
-    color: #fff;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    flex: 1 1 300px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 ul li:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
 a {
-    color: #34e89e;
+    color: #92FE9D;
     text-decoration: none;
-    font-weight: bold;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #ff758c;
+    color: #00C9FF;
 }
 
 footer {
+    background: #00C9FF;
+    color: #121212;
     text-align: center;
-    background: linear-gradient(to right, #0f3443, #34e89e);
-    color: #fff;
     padding: 20px 0;
-    position: relative;
+    margin-top: 50px;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
 }
 
 footer p {
-    margin: 0;
-    font-size: 1.1em;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
-/* Background animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adding cool animated background */
 body::before {
     content: '';
     position: fixed;
@@ -147,19 +143,19 @@ body::before {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url('https://source.unsplash.com/1600x900/?bioinformatics,science') no-repeat center center/cover;
-    filter: blur(8px) brightness(0.7);
-    animation: backgroundFade 10s infinite alternate;
+    background: linear-gradient(45deg, #121212, #1E1E1E, #00C9FF, #92FE9D);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
 }
 
-@keyframes backgroundFade {
+@keyframes gradientAnimation {
     0% {
-        filter: blur(8px) brightness(0.7);
+        background-position: 0% 50%;
     }
     50% {
-        filter: blur(5px) brightness(0.9);
+        background-position: 100% 50%;
     }
     100% {
-        filter: blur(8px) brightness(0.7);
+        background-position: 0% 50%;
     }
 }
