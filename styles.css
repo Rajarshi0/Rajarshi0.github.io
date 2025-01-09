@@ -1,76 +1,90 @@
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background: linear-gradient(120deg, #f6d365, #fda085);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajarshi Mondal - Bioinformatician</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Rajarshi Mondal</h1>
+            <p>Bioinformatician</p>
+            <p><a href="mailto:rajarshimondal92@gmail.com">rajarshimondal92@gmail.com</a> | India | <a href="https://www.linkedin.com/in/rajarshi-mondal/" target="_blank">LinkedIn</a></p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-header {
-    background: #ff6f61;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Results-driven bioinformatician with a solid understanding of computational biology and genomic analysis. Experienced in programming languages, data manipulation, and automation of bioinformatics workflows. Committed to advancing precision medicine and drug discovery.</p>
+    </section>
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <h3>Research Assistant - IIIT Delhi (Aug 2024 – Present)</h3>
+        <ul>
+            <li>Working on 3D Genomics and single-cell genomics workflows.</li>
+        </ul>
 
-header .subtitle {
-    margin: 10px 0;
-    font-size: 1.2em;
-    font-style: italic;
-}
+        <h3>Junior Bioinformatician - Unipath Laboratories (Sep 2023 – Jul 2024)</h3>
+        <ul>
+            <li>Developed Whole Exome Sequencing pipelines integrating CNV analysis.</li>
+            <li>Automated NGS analysis workflows using Bash scripting.</li>
+        </ul>
+    </section>
 
-header .contact-info a {
-    color: #ffe6e2;
-    text-decoration: none;
-}
+    <section id="education">
+        <h2>Education</h2>
+        <p><strong>MSc in Bioinformatics</strong>, Pondicherry University, India (2021 – 2023) - CGPA: 8.69/10</p>
+        <p><strong>BSc in Biotechnology (Hons)</strong>, The University of Burdwan, India (2018 – 2021) - CGPA: 8.56/10</p>
+    </section>
 
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px;
-}
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming: R, Python, Java, Perl, Bash</li>
+            <li>NGS Analysis: Metagenomics, WES, CNV analysis</li>
+            <li>Tools: AutoDock, GROMACS, BLAST, BWA-MEM, Minimap2</li>
+        </ul>
+    </section>
 
-section {
-    margin: 20px 0;
-}
+    <section id="projects">
+        <h2>Key Projects</h2>
+        <ul>
+            <li><strong>Master's Project:</strong> Investigated CML mechanisms and identified significant driver mutations.</li>
+            <li><strong>HackBio Project:</strong> Conducted eQTL analysis for Alzheimer’s Disease using PathfindR.</li>
+        </ul>
+    </section>
 
-h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #ff6f61;
-}
+    <section id="publications">
+        <h2>Publications</h2>
+        <ul>
+            <li><a href="https://doi.org/10.1038/s41467-024-53260-y" target="_blank">The GIAB genomic stratifications resource for human reference genomes</a> - Nature Communications</li>
+            <li><a href="https://doi.org/10.12688/f1000research.110194.1" target="_blank">The Third International Hackathon Paper</a> - F1000Research</li>
+        </ul>
+    </section>
 
-ul {
-    list-style: none;
-    padding: 0;
-}
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:rajarshimondal92@gmail.com">rajarshimondal92@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/rajarshi-mondal/" target="_blank">Rajarshi Mondal</a></p>
+    </section>
 
-ul li {
-    background: #fff;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.job {
-    margin-bottom: 20px;
-}
-
-footer {
-    background: #ff6f61;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+    <footer>
+        <p>&copy; 2025 Rajarshi Mondal</p>
+    </footer>
+</body>
+</html>
