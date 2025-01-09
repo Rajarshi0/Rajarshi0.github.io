@@ -3,39 +3,47 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg, #0f0f0f, #1a1a1a); /* Dark gradient */
+    background: linear-gradient(to bottom, #0b132b, #1c2541); /* Bioinformatics-inspired gradient */
     color: #eaeaea;
     line-height: 1.8;
     overflow-x: hidden;
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
+/* Anchor Offset for Sticky Navbar */
+section {
+    scroll-margin-top: 80px; /* Adjust based on navbar height */
+}
+
+/* Links */
 a {
-    color: #1bc2d8; /* Vibrant cyan for links */
+    color: #00d4ff; /* Cyan for scientific vibe */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 a:hover {
-    color: #ff4081; /* Bright pink for hover */
+    color: #66ff91; /* Vibrant green for hover */
     transform: scale(1.1);
 }
 
-/* Header Styles */
+/* Header */
 header {
-    background: linear-gradient(135deg, #202020, #3a3a3a); /* Sleek dark gradient */
+    background: linear-gradient(135deg, #1c2541, #0b132b); /* Dark bioinformatics gradient */
     color: #ffffff;
     padding: 60px 20px;
     text-align: center;
     position: relative;
+    overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 header h1 {
-    font-size: 4.5em;
+    font-size: 4em;
     margin: 0;
-    color: #1bc2d8;
-    text-shadow: 0 0 20px #1bc2d8, 0 0 30px #1bc2d8;
+    color: #66ff91; /* Green inspired by molecular activity */
+    text-shadow: 0 0 10px #66ff91, 0 0 20px #66ff91;
     animation: glow 2s infinite alternate;
 }
 
@@ -43,8 +51,8 @@ header .subtitle {
     font-size: 1.5em;
     margin-top: 10px;
     font-style: italic;
-    color: #ff4081;
-    text-shadow: 0 0 15px #ff4081, 0 0 25px #ff4081;
+    color: #00d4ff; /* Complementary cyan */
+    text-shadow: 0 0 15px #00d4ff, 0 0 25px #00d4ff;
 }
 
 header .contact-info {
@@ -53,12 +61,12 @@ header .contact-info {
 }
 
 header .contact-info a:hover {
-    color: #ffe082; /* Warm yellow for hover */
+    color: #ffea00; /* Bright yellow for hover */
 }
 
-/* Navigation Styles */
+/* Navigation */
 nav {
-    background: #111111;
+    background: #1c2541; /* Dark blue */
     padding: 10px 0;
     position: sticky;
     top: 0;
@@ -87,17 +95,17 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #1bc2d8;
-    border-bottom: 2px solid #1bc2d8;
+    color: #66ff91;
+    border-bottom: 2px solid #66ff91;
 }
 
-/* Section Styles */
+/* Sections */
 .container {
     width: 85%;
     max-width: 1200px;
     margin: auto;
     padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.05); /* Frosted glass effect */
+    background: rgba(30, 30, 47, 0.8); /* Semi-transparent container */
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
@@ -109,18 +117,13 @@ nav ul li a:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-section {
-    margin: 60px 0;
-    position: relative;
-}
-
 h2 {
     font-size: 3em;
     margin-bottom: 20px;
-    color: #1bc2d8;
-    border-bottom: 4px solid #ff4081;
+    color: #66ff91;
+    border-bottom: 4px solid #00d4ff;
     padding-bottom: 5px;
-    text-shadow: 0 0 10px #1bc2d8;
+    text-shadow: 0 0 10px #66ff91;
 }
 
 ul {
@@ -135,6 +138,7 @@ ul li {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #dcdcdc;
 }
 
 ul li:hover {
@@ -144,7 +148,7 @@ ul li:hover {
 
 .job h3 {
     font-size: 1.5em;
-    color: #ff4081;
+    color: #00d4ff;
 }
 
 .job p {
@@ -152,9 +156,9 @@ ul li:hover {
     color: #ffffff;
 }
 
-/* Footer Styles */
+/* Footer */
 footer {
-    background: linear-gradient(135deg, #1e1e2e, #3a3a4f); /* Footer gradient */
+    background: linear-gradient(135deg, #1e1e2e, #3a3a4f);
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
@@ -164,40 +168,11 @@ footer {
 
 footer p {
     margin: 0;
-    font-size: 1em;
 }
 
-/* Fancy Floating Background Elements */
-body::before,
-body::after {
-    content: '';
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 400px;
-    height: 400px;
-    background: rgba(27, 194, 216, 0.15);
-    border-radius: 50%;
-    filter: blur(100px);
-    animation: floating 6s infinite alternate;
-}
-
-body::after {
-    left: -50px;
-    top: auto;
-    bottom: -50px;
-    background: rgba(255, 64, 129, 0.15);
-    animation-delay: 3s;
-}
-
+/* Animation */
 @keyframes glow {
     to {
-        text-shadow: 0 0 40px #1bc2d8, 0 0 60px #1bc2d8;
-    }
-}
-
-@keyframes floating {
-    to {
-        transform: translateY(30px);
+        text-shadow: 0 0 30px #66ff91, 0 0 60px #66ff91;
     }
 }
