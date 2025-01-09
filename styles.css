@@ -1,50 +1,84 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    color: #eaeaea;
-    background: linear-gradient(120deg, #1a1a2e, #16213e); /* Dark gradient background */
+    color: #ffffff;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364); /* Stylish dark gradient */
+    line-height: 1.6;
 }
 
 a {
-    color: #ff6f61; /* Coral for links */
+    color: #ff6f61; /* Coral links */
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 a:hover {
-    color: #ffd700; /* Vibrant yellow for hover */
+    color: #ffd700; /* Vibrant yellow hover effect */
     text-decoration: underline;
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #ff6f61, #6a0572); /* Gradient for header */
+    background: linear-gradient(135deg, #ff6f61, #ff9966); /* Funky header gradient */
     color: #fff;
-    padding: 20px 0;
+    padding: 30px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
+    font-size: 3em;
     margin: 0;
-    font-size: 2.5em;
     text-shadow: 2px 2px 5px #000;
 }
 
 header .subtitle {
     margin: 10px 0;
-    font-size: 1.3em;
+    font-size: 1.4em;
     font-style: italic;
 }
 
 header .contact-info a {
-    color: #ffe6e2;
-    text-decoration: none;
+    font-weight: bold;
 }
 
 header .contact-info a:hover {
-    color: #ffd700;
+    color: #ffe6b2;
+}
+
+/* Navigation Styles */
+nav {
+    background: #16213e; /* Midnight blue for nav */
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+nav .navigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav .navigation li {
+    margin: 0 15px;
+}
+
+nav .navigation a {
+    color: #ffffff;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav .navigation a:hover {
+    color: #ff6f61;
+    border-bottom: 2px solid #ff6f61;
 }
 
 /* Section Styles */
@@ -52,20 +86,20 @@ header .contact-info a:hover {
     width: 80%;
     max-width: 1200px;
     margin: auto;
-    overflow: hidden;
     padding: 20px;
 }
 
 section {
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
-    color: #ffd700; /* Vibrant yellow for headings */
-    border-bottom: 2px solid #ff6f61; /* Coral underline */
-    padding-bottom: 5px;
+    font-size: 2.5em;
+    color: #ff6f61;
+    border-bottom: 3px solid #ffd700;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px #000;
 }
 
 ul {
@@ -74,7 +108,7 @@ ul {
 }
 
 ul li {
-    background: #282c34; /* Dark card background */
+    background: #1a1a2e;
     margin: 10px 0;
     padding: 15px;
     border-radius: 8px;
@@ -83,31 +117,50 @@ ul li {
 }
 
 ul li:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 .job h3 {
-    font-size: 1.3em;
-    margin: 0;
-    color: #ff6f61; /* Coral for job titles */
+    font-size: 1.5em;
+    color: #ffd700; /* Vibrant yellow */
+    margin-bottom: 5px;
 }
 
 .job p {
     font-style: italic;
-    margin: 5px 0;
+    margin-bottom: 10px;
 }
 
 /* Footer Styles */
 footer {
-    background: linear-gradient(135deg, #6a0572, #ff6f61); /* Footer gradient */
-    color: #fff;
+    background: linear-gradient(135deg, #ff6f61, #6a0572); /* Gradient for footer */
+    color: #ffffff;
     text-align: center;
-    padding: 15px 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
 }
 
 footer p {
     margin: 0;
     font-size: 1em;
+}
+
+/* Add Funky Button Style (Optional) */
+button {
+    background: #ff6f61;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: #ffd700;
+    transform: scale(1.1);
 }
