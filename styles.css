@@ -4,87 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rajarshi Mondal - Bioinformatician</title>
-    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Rajarshi Mondal</h1>
-            <p>Bioinformatician</p>
-            <p><a href="mailto:rajarshimondal92@gmail.com">rajarshimondal92@gmail.com</a> | India | <a href="https://www.linkedin.com/in/rajarshi-mondal/" target="_blank">LinkedIn</a></p>
+            <p class="subtitle">Bioinformatician | Genomics | Research Enthusiast</p>
+            <p class="contact-info">
+                📧 <a href="mailto:rajarshimondal92@gmail.com">rajarshimondal92@gmail.com</a> |
+                📞 +91 7001750048 |
+                🌐 <a href="https://linkedin.com/in/rajarshi-mondal">LinkedIn</a>
+            </p>
         </div>
     </header>
-    
+
     <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="container">
+            <ul class="navigation">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <section id="about">
-        <h2>About Me</h2>
-        <p>Results-driven bioinformatician with a solid understanding of computational biology and genomic analysis. Experienced in programming languages, data manipulation, and automation of bioinformatics workflows. Committed to advancing precision medicine and drug discovery.</p>
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Results-driven bioinformatician with a solid understanding of computational biology and genomic analysis. Experienced in programming languages, data manipulation, and automation of bioinformatics workflows. Passionate about advancing precision medicine and drug discovery.</p>
+        </div>
+    </section>
+
+    <section id="expertise">
+        <div class="container">
+            <h2>Areas of Expertise</h2>
+            <ul>
+                <li>Biological Data Analysis</li>
+                <li>Computational Biology Applications</li>
+                <li>Custom Analytical Pipeline Development</li>
+                <li>Bioinformatics Tool Development</li>
+                <li>Genomic Variant Interpretation</li>
+            </ul>
+        </div>
     </section>
 
     <section id="experience">
-        <h2>Professional Experience</h2>
-        <h3>Research Assistant - IIIT Delhi (Aug 2024 – Present)</h3>
-        <ul>
-            <li>Working on 3D Genomics and single-cell genomics workflows.</li>
-        </ul>
-
-        <h3>Junior Bioinformatician - Unipath Laboratories (Sep 2023 – Jul 2024)</h3>
-        <ul>
-            <li>Developed Whole Exome Sequencing pipelines integrating CNV analysis.</li>
-            <li>Automated NGS analysis workflows using Bash scripting.</li>
-        </ul>
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="job">
+                <h3>Research Assistant</h3>
+                <p>IIIT Delhi, India | Aug 2024 – Present</p>
+                <ul>
+                    <li>Working on 3D Genomics and Single-cell Genomics.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Junior Bioinformatician</h3>
+                <p>Unipath Laboratories, India | Sep 2023 – Jul 2024</p>
+                <ul>
+                    <li>Developed Whole Exome Sequencing (WES) pipelines with advanced CNV analysis.</li>
+                    <li>Automated NGS analysis pipelines using bash scripting.</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section id="education">
-        <h2>Education</h2>
-        <p><strong>MSc in Bioinformatics</strong>, Pondicherry University, India (2021 – 2023) - CGPA: 8.69/10</p>
-        <p><strong>BSc in Biotechnology (Hons)</strong>, The University of Burdwan, India (2018 – 2021) - CGPA: 8.56/10</p>
-    </section>
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Programming: R, Python, Java, Perl, Bash</li>
-            <li>NGS Analysis: Metagenomics, WES, CNV analysis</li>
-            <li>Tools: AutoDock, GROMACS, BLAST, BWA-MEM, Minimap2</li>
-        </ul>
+        <div class="container">
+            <h2>Education</h2>
+            <ul>
+                <li>MSc in Bioinformatics, Pondicherry University, India (2021 – 2023)</li>
+                <li>BSc in Biotechnology, The University of Burdwan, India (2018 – 2021)</li>
+            </ul>
+        </div>
     </section>
 
     <section id="projects">
-        <h2>Key Projects</h2>
-        <ul>
-            <li><strong>Master's Project:</strong> Investigated CML mechanisms and identified significant driver mutations.</li>
-            <li><strong>HackBio Project:</strong> Conducted eQTL analysis for Alzheimer’s Disease using PathfindR.</li>
-        </ul>
+        <div class="container">
+            <h2>Key Projects</h2>
+            <ul>
+                <li>Master's Project: Investigated CML mechanisms and identified significant driver mutations.</li>
+                <li>HackBio Project: Conducted eQTL analysis for Alzheimer’s Disease using PathfindR.</li>
+            </ul>
+        </div>
     </section>
 
     <section id="publications">
-        <h2>Publications</h2>
-        <ul>
-            <li><a href="https://doi.org/10.1038/s41467-024-53260-y" target="_blank">The GIAB genomic stratifications resource for human reference genomes</a> - Nature Communications</li>
-            <li><a href="https://doi.org/10.12688/f1000research.110194.1" target="_blank">The Third International Hackathon Paper</a> - F1000Research</li>
-        </ul>
+        <div class="container">
+            <h2>Publications</h2>
+            <ul>
+                <li><a href="https://doi.org/10.1038/s41467-024-53260-y" target="_blank">The GIAB genomic stratifications resource for human reference genomes</a> - Nature Communications</li>
+                <li><a href="https://doi.org/10.12688/f1000research.110194.1" target="_blank">The Third International Hackathon Paper</a> - F1000Research</li>
+                <li><a href="#" target="_blank">Integrative eQTL Analysis of Gene Expression and Metabolic Pathways Associated with Alzheimer's Disease</a> - Preprint</li>
+                <li>SNBNCBS Thesis: Predicting the Efficiency of Drug Molecules: An In-Silico Approach Using Molecular Docking and Simulation</li>
+            </ul>
+        </div>
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:rajarshimondal92@gmail.com">rajarshimondal92@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/rajarshi-mondal/" target="_blank">Rajarshi Mondal</a></p>
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:rajarshimondal92@gmail.com">rajarshimondal92@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/rajarshi-mondal">Rajarshi Mondal</a></p>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Rajarshi Mondal</p>
+        <div class="container">
+            <p>&copy; 2025 Rajarshi Mondal. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
