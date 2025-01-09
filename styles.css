@@ -1,123 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajarshi Mondal - Bioinformatician</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Rajarshi Mondal</h1>
-            <p class="subtitle">Bioinformatician | Genomics | Research Enthusiast</p>
-            <p class="contact-info">
-                📧 <a href="mailto:rajarshimondal92@gmail.com">rajarshimondal92@gmail.com</a> |
-                📞 +91 7001750048 |
-                🌐 <a href="https://linkedin.com/in/rajarshi-mondal">LinkedIn</a>
-            </p>
-        </div>
-    </header>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
+}
 
-    <nav>
-        <div class="container">
-            <ul class="navigation">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+a {
+    color: #66b2ff; /* Highlight links */
+    text-decoration: none;
+}
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Results-driven bioinformatician with a solid understanding of computational biology and genomic analysis. Experienced in programming languages, data manipulation, and automation of bioinformatics workflows. Passionate about advancing precision medicine and drug discovery.</p>
-        </div>
-    </section>
+a:hover {
+    text-decoration: underline;
+}
 
-    <section id="expertise">
-        <div class="container">
-            <h2>Areas of Expertise</h2>
-            <ul>
-                <li>Biological Data Analysis</li>
-                <li>Computational Biology Applications</li>
-                <li>Custom Analytical Pipeline Development</li>
-                <li>Bioinformatics Tool Development</li>
-                <li>Genomic Variant Interpretation</li>
-            </ul>
-        </div>
-    </section>
+/* Header Styles */
+header {
+    background-color: #1e1e1e; /* Slightly lighter dark for header */
+    padding: 20px 0;
+    text-align: center;
+}
 
-    <section id="experience">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            <div class="job">
-                <h3>Research Assistant</h3>
-                <p>IIIT Delhi, India | Aug 2024 – Present</p>
-                <ul>
-                    <li>Working on 3D Genomics and Single-cell Genomics.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Junior Bioinformatician</h3>
-                <p>Unipath Laboratories, India | Sep 2023 – Jul 2024</p>
-                <ul>
-                    <li>Developed Whole Exome Sequencing (WES) pipelines with advanced CNV analysis.</li>
-                    <li>Automated NGS analysis pipelines using bash scripting.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
 
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <ul>
-                <li>MSc in Bioinformatics, Pondicherry University, India (2021 – 2023)</li>
-                <li>BSc in Biotechnology, The University of Burdwan, India (2018 – 2021)</li>
-            </ul>
-        </div>
-    </section>
+header p {
+    margin: 5px 0;
+}
 
-    <section id="projects">
-        <div class="container">
-            <h2>Key Projects</h2>
-            <ul>
-                <li>Master's Project: Investigated CML mechanisms and identified significant driver mutations.</li>
-                <li>HackBio Project: Conducted eQTL analysis for Alzheimer’s Disease using PathfindR.</li>
-            </ul>
-        </div>
-    </section>
+.contact-info a {
+    font-weight: bold;
+}
 
-    <section id="publications">
-        <div class="container">
-            <h2>Publications</h2>
-            <ul>
-                <li><a href="https://doi.org/10.1038/s41467-024-53260-y" target="_blank">The GIAB genomic stratifications resource for human reference genomes</a> - Nature Communications</li>
-                <li><a href="https://doi.org/10.12688/f1000research.110194.1" target="_blank">The Third International Hackathon Paper</a> - F1000Research</li>
-                <li><a href="#" target="_blank">Integrative eQTL Analysis of Gene Expression and Metabolic Pathways Associated with Alzheimer's Disease</a> - Preprint</li>
-                <li>SNBNCBS Thesis: Predicting the Efficiency of Drug Molecules: An In-Silico Approach Using Molecular Docking and Simulation</li>
-            </ul>
-        </div>
-    </section>
+/* Navigation Styles */
+nav {
+    background-color: #2a2a2a; /* Darker nav bar */
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:rajarshimondal92@gmail.com">rajarshimondal92@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/rajarshi-mondal">Rajarshi Mondal</a></p>
-        </div>
-    </section>
+nav .navigation {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Rajarshi Mondal. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+nav .navigation li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav .navigation a {
+    font-size: 1em;
+    color: #e0e0e0;
+}
+
+nav .navigation a:hover {
+    color: #66b2ff;
+}
+
+/* Section Styles */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #66b2ff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+.job h3 {
+    font-size: 1.3em;
+    margin: 10px 0 5px;
+}
+
+.job p {
+    font-style: italic;
+    margin: 0 0 10px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
