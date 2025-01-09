@@ -1,81 +1,91 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text */
+    background-color: #1a1a2e; /* Deep dark blue */
+    color: #eaeaea; /* Soft white */
 }
 
 a {
-    color: #66b2ff; /* Highlight links */
+    color: #ff6f61; /* Funky coral for links */
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #ffd700; /* Vibrant yellow for hover effect */
 }
 
 /* Header Styles */
 header {
-    background-color: #1e1e1e; /* Slightly lighter dark for header */
-    padding: 20px 0;
+    background: linear-gradient(135deg, #ff6f61, #6a0572); /* Vibrant gradient */
+    color: #ffffff;
+    padding: 30px 0;
     text-align: center;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     margin: 0;
-}
-
-header p {
-    margin: 5px 0;
-}
-
-.contact-info a {
     font-weight: bold;
+    text-shadow: 2px 2px 5px #000;
+}
+
+header .subtitle {
+    font-size: 1.2em;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.contact-info {
+    margin: 10px 0;
 }
 
 /* Navigation Styles */
 nav {
-    background-color: #2a2a2a; /* Darker nav bar */
-    padding: 10px 0;
-    margin-bottom: 20px;
+    background-color: #16213e; /* Midnight blue for contrast */
+    padding: 15px 0;
 }
 
 nav .navigation {
     list-style: none;
-    text-align: center;
-    margin: 0;
+    display: flex;
+    justify-content: center;
     padding: 0;
+    margin: 0;
 }
 
 nav .navigation li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav .navigation a {
-    font-size: 1em;
-    color: #e0e0e0;
+    font-size: 1.1em;
+    color: #eaeaea;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
 nav .navigation a:hover {
-    color: #66b2ff;
+    color: #ffd700; /* Vibrant yellow hover */
+    border-bottom: 2px solid #ff6f61; /* Coral underline */
 }
 
 /* Section Styles */
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
 h2 {
-    font-size: 1.8em;
-    border-bottom: 2px solid #66b2ff;
+    font-size: 2em;
+    color: #ffd700; /* Vibrant yellow for headings */
+    border-bottom: 3px solid #ff6f61; /* Coral underline */
     padding-bottom: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 ul {
@@ -84,12 +94,18 @@ ul {
 }
 
 ul li {
-    margin: 10px 0;
+    margin: 15px 0;
+    background: #16213e; /* Midnight blue for list background */
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px #000;
 }
 
 .job h3 {
-    font-size: 1.3em;
-    margin: 10px 0 5px;
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #ff6f61; /* Coral for job titles */
 }
 
 .job p {
@@ -99,13 +115,32 @@ ul li {
 
 /* Footer Styles */
 footer {
-    background-color: #1e1e1e;
+    background: linear-gradient(135deg, #6a0572, #ff6f61); /* Funky gradient */
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+    padding: 20px 0;
+    margin-top: 30px;
 }
 
 footer p {
     margin: 0;
-    font-size: 0.9em;
+    color: #ffffff;
+    font-size: 1em;
+}
+
+/* Funky Button Styles */
+button {
+    background-color: #ff6f61;
+    color: #ffffff;
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px #000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffd700;
+    transform: scale(1.1);
 }
