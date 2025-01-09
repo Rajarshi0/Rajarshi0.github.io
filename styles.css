@@ -3,38 +3,71 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #0b132b, #1c2541);
-    color: #eaeaea;
+    background: linear-gradient(45deg, #0b132b, #1c2541, #3a506b);
+    background-size: 400% 400%; /* For gradient animation */
+    animation: gradientShift 10s ease infinite;
+    color: #ffffff;
     line-height: 1.8;
     overflow-x: hidden;
-    scroll-behavior: smooth; /* Smooth scrolling */
+    scroll-behavior: smooth;
 }
 
-/* Anchor Offset for Sticky Navbar */
-section {
-    scroll-margin-top: 100px; /* Adjust based on navbar height */
+/* Gradient Animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-/* Links */
-a {
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.2s ease;
+/* Navigation */
+nav {
+    background: rgba(12, 12, 34, 0.8); /* Slightly transparent */
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
 }
 
-a:hover {
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
     color: #66ff91;
-    transform: scale(1.1);
+    border-bottom: 2px solid #66ff91;
 }
 
 /* Header */
 header {
     background: linear-gradient(135deg, #1c2541, #0b132b);
     color: #ffffff;
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
     position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
@@ -59,74 +92,28 @@ header .contact-info {
     font-size: 1.2em;
 }
 
-/* Navigation */
-nav {
-    background: #1c2541;
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #ffffff;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    border-bottom: 2px solid transparent;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #66ff91;
-    border-bottom: 2px solid #66ff91;
-}
-
-/* Sections */
-.container {
-    width: 85%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px 20px;
-    background: rgba(30, 30, 47, 0.8);
-    border-radius: 15px;
+/* Section Containers with Slanting Design */
+.slanted {
+    background: rgba(255, 255, 255, 0.05); /* Semi-transparent container */
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+    padding: 60px 20px;
+    margin: 50px 0;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 0.8s ease forwards;
 }
 
-section:nth-child(even) .container {
-    animation-delay: 0.3s;
+.slanted:nth-child(odd) {
+    background: rgba(30, 50, 80, 0.85);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
 }
 
-section:nth-child(odd) .container {
-    animation-delay: 0.6s;
+.slanted:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Section Titles */
-h2 {
+.slanted h2 {
     font-size: 3em;
     margin-bottom: 20px;
     color: #66ff91;
