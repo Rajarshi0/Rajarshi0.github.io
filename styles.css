@@ -3,7 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #0b132b, #1c2541); /* Bioinformatics-inspired gradient */
+    background: linear-gradient(to bottom, #0b132b, #1c2541);
     color: #eaeaea;
     line-height: 1.8;
     overflow-x: hidden;
@@ -12,37 +12,36 @@ body {
 
 /* Anchor Offset for Sticky Navbar */
 section {
-    scroll-margin-top: 80px; /* Adjust based on navbar height */
+    scroll-margin-top: 100px; /* Adjust based on navbar height */
 }
 
 /* Links */
 a {
-    color: #00d4ff; /* Cyan for scientific vibe */
+    color: #00d4ff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 a:hover {
-    color: #66ff91; /* Vibrant green for hover */
+    color: #66ff91;
     transform: scale(1.1);
 }
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #1c2541, #0b132b); /* Dark bioinformatics gradient */
+    background: linear-gradient(135deg, #1c2541, #0b132b);
     color: #ffffff;
     padding: 60px 20px;
     text-align: center;
     position: relative;
-    overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 header h1 {
     font-size: 4em;
     margin: 0;
-    color: #66ff91; /* Green inspired by molecular activity */
+    color: #66ff91;
     text-shadow: 0 0 10px #66ff91, 0 0 20px #66ff91;
     animation: glow 2s infinite alternate;
 }
@@ -51,7 +50,7 @@ header .subtitle {
     font-size: 1.5em;
     margin-top: 10px;
     font-style: italic;
-    color: #00d4ff; /* Complementary cyan */
+    color: #00d4ff;
     text-shadow: 0 0 15px #00d4ff, 0 0 25px #00d4ff;
 }
 
@@ -60,13 +59,9 @@ header .contact-info {
     font-size: 1.2em;
 }
 
-header .contact-info a:hover {
-    color: #ffea00; /* Bright yellow for hover */
-}
-
 /* Navigation */
 nav {
-    background: #1c2541; /* Dark blue */
+    background: #1c2541;
     padding: 10px 0;
     position: sticky;
     top: 0;
@@ -105,18 +100,32 @@ nav ul li a:hover {
     max-width: 1200px;
     margin: auto;
     padding: 40px 20px;
-    background: rgba(30, 30, 47, 0.8); /* Semi-transparent container */
+    background: rgba(30, 30, 47, 0.8);
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease forwards;
 }
 
-.container:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+section:nth-child(even) .container {
+    animation-delay: 0.3s;
 }
 
+section:nth-child(odd) .container {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Titles */
 h2 {
     font-size: 3em;
     margin-bottom: 20px;
@@ -126,6 +135,7 @@ h2 {
     text-shadow: 0 0 10px #66ff91;
 }
 
+/* List Items */
 ul {
     list-style: none;
     padding: 0;
