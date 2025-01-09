@@ -6,6 +6,14 @@
     <title>Funky Website - Rajarshi Mondal</title>
     <link href="styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        nav a {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,6 +31,7 @@
     <section id="about">
         <h2>About Me</h2>
         <p>Hi! I’m Rajarshi Mondal, a passionate bioinformatician with a knack for innovation. With a background in computational biology and a love for creative problem-solving, I’ve been exploring the intersection of technology and life sciences to drive impactful research.</p>
+        <img src="https://source.unsplash.com/600x400/?bioinformatics" alt="Bioinformatics Visualization" style="width:100%; border-radius:10px;">
     </section>
 
     <section id="experience">
@@ -53,10 +62,32 @@
         </ul>
     </section>
 
+    <section id="skills">
+        <h2>Skills</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div style="background: linear-gradient(to bottom right, #ff758c, #ff7eb3); padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); color: white; text-align: center; width: 200px;">
+                <h3>Python</h3>
+            </div>
+            <div style="background: linear-gradient(to bottom right, #8e44ad, #c0392b); padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); color: white; text-align: center; width: 200px;">
+                <h3>R Programming</h3>
+            </div>
+            <div style="background: linear-gradient(to bottom right, #3498db, #2ecc71); padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); color: white; text-align: center; width: 200px;">
+                <h3>Data Analysis</h3>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:rajarshimondal92@gmail.com">rajarshimondal92@gmail.com</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/rajarshi-mondal/" target="_blank">Rajarshi Mondal</a></p>
+        <form style="background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); max-width: 600px; margin: auto;">
+            <label for="name" style="display: block; margin-bottom: 10px; font-weight: bold;">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ddd;">
+            <label for="message" style="display: block; margin-bottom: 10px; font-weight: bold;">Message:</label>
+            <textarea id="message" name="message" placeholder="Your Message" style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ddd; height: 100px;"></textarea>
+            <button type="submit" style="background: linear-gradient(to right, #34e89e, #0f3443); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1em;">Send</button>
+        </form>
     </section>
 
     <footer>
