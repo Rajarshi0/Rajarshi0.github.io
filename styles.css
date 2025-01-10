@@ -3,133 +3,125 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(45deg, #0b132b, #1c2541, #3a506b);
-    background-size: 400% 400%; /* For gradient animation */
-    animation: gradientShift 10s ease infinite;
     color: #ffffff;
-    line-height: 1.8;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    background: #1e1e2f;
+    background-image: url('https://www.transparenttextures.com/patterns/hexellence.png'); /* Pentagonal pattern */
+    background-size: auto;
+    line-height: 1.6;
 }
 
-/* Gradient Animation */
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+a {
+    color: #00d4ff; /* Vibrant cyan for links */
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-/* Navigation */
+a:hover {
+    color: #ff4081; /* Bright pink for hover */
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #1f1c2c, #928dab); /* Dark gradient */
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 4em;
+    margin: 0;
+    color: #00d4ff; /* Neon cyan */
+    text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+}
+
+header .subtitle {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: 10px;
+    color: #ff4081; /* Neon pink */
+}
+
+header .contact-info a {
+    font-weight: bold;
+    font-size: 1em;
+    margin: 0 10px;
+}
+
+header .contact-info a:hover {
+    color: #ff4081;
+}
+
+/* Navigation Styles */
 nav {
-    background: rgba(12, 12, 34, 0.8); /* Slightly transparent */
+    background: #15151e; /* Midnight black */
     padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: #ffffff;
     font-size: 1.2em;
     text-transform: uppercase;
-    border-bottom: 2px solid transparent;
+    padding: 5px 10px;
     transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
 }
 
 nav ul li a:hover {
-    color: #66ff91;
-    border-bottom: 2px solid #66ff91;
-}
-
-/* Header */
-header {
-    background: linear-gradient(135deg, #1c2541, #0b132b);
-    color: #ffffff;
-    padding: 80px 20px;
-    text-align: center;
-    position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
-}
-
-header h1 {
-    font-size: 4em;
-    margin: 0;
-    color: #66ff91;
-    text-shadow: 0 0 10px #66ff91, 0 0 20px #66ff91;
-    animation: glow 2s infinite alternate;
-}
-
-header .subtitle {
-    font-size: 1.5em;
-    margin-top: 10px;
-    font-style: italic;
     color: #00d4ff;
-    text-shadow: 0 0 15px #00d4ff, 0 0 25px #00d4ff;
+    border-bottom: 2px solid #00d4ff;
 }
 
-header .contact-info {
-    margin-top: 20px;
-    font-size: 1.2em;
+/* Section Styles */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    background: rgba(30, 30, 47, 0.8); /* Semi-transparent dark background */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Section Containers with Slanting Design */
-.slanted {
-    background: rgba(255, 255, 255, 0.05); /* Semi-transparent container */
-    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
-    padding: 60px 20px;
+section {
     margin: 50px 0;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.slanted:nth-child(odd) {
-    background: rgba(30, 50, 80, 0.85);
-    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-}
-
-.slanted:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-}
-
-.slanted h2 {
-    font-size: 3em;
+h2 {
+    font-size: 2.5em;
     margin-bottom: 20px;
-    color: #66ff91;
-    border-bottom: 4px solid #00d4ff;
+    color: #00d4ff;
+    border-bottom: 3px solid #ff4081;
+    display: inline-block;
     padding-bottom: 5px;
-    text-shadow: 0 0 10px #66ff91;
 }
 
-/* List Items */
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 ul li {
-    background: #1e1e2e;
+    background: #252540;
     margin: 15px 0;
     padding: 20px;
     border-radius: 10px;
@@ -140,7 +132,7 @@ ul li {
 
 ul li:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 .job h3 {
@@ -153,13 +145,13 @@ ul li:hover {
     color: #ffffff;
 }
 
-/* Footer */
+/* Footer Styles */
 footer {
-    background: linear-gradient(135deg, #1e1e2e, #3a3a4f);
+    background: linear-gradient(135deg, #1f1c2c, #928dab); /* Gradient */
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
-    margin-top: 60px;
+    margin-top: 50px;
     border-top: 2px solid #252540;
 }
 
@@ -167,9 +159,36 @@ footer p {
     margin: 0;
 }
 
-/* Animation */
-@keyframes glow {
+/* Pentagonal Background Elements (Optional) */
+body::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 212, 255, 0.15);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    animation: rotatePentagon 10s infinite linear;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 64, 129, 0.15);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    animation: rotatePentagon 10s infinite reverse linear;
+}
+
+@keyframes rotatePentagon {
+    from {
+        transform: rotate(0deg);
+    }
     to {
-        text-shadow: 0 0 30px #66ff91, 0 0 60px #66ff91;
+        transform: rotate(360deg);
     }
 }
