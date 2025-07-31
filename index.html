@@ -82,9 +82,9 @@
         let commandHistory = [];
         let historyIndex = -1;
 
-        // --- COMMANDS OBJECT ---
+        // --- COMMANDS AND ALIASES OBJECT ---
         const commands = {
-            'help': 'Available commands:\n  <span class="output-success">about</span>         - Who is Rajarshi Mondal?\n  <span class="output-success">experience</span>    - View professional experience\n  <span class="output-success">skills</span>        - List technical skills\n  <span class="output-success">projects</span>      - See key projects\n  <span class="output-success">publications</span>  - Read my published work\n  <span class="output-success">contact</span>       - Get in touch\n  <span class="output-success">social</span>        - Connect on social media\n  <span class="output-success">clear</span>         - Clear the terminal screen\n  <span class="output-success">dna</span>           - Fun animation\n  <span class="output-success">all</span>           - Display all info at once',
+            'help': 'Available commands:\n  <span class="output-success">about</span>         - Who is Rajarshi Mondal?\n  <span class="output-success">experience (xp)</span> - View professional experience\n  <span class="output-success">education (edu)</span> - View education credentials\n  <span class="output-success">skills (sk)</span>     - List technical skills\n  <span class="output-success">projects (proj)</span> - See key projects\n  <span class="output-success">publications (pubs)</span> - Read my published work\n  <span class="output-success">contact</span>       - Get in touch\n  <span class="output-success">social</span>        - Connect on social media\n  <span class="output-success">clear</span>         - Clear the terminal screen\n  <span class="output-success">dna</span>           - Fun animation\n  <span class="output-success">all</span>           - Display all info at once',
             'about': `
 <img src="https://lh3.googleusercontent.com/d/1XkrVnKEbkr4hxbvVVG8DQ9b2_QGe542a" 
      alt="Rajarshi Mondal" 
@@ -111,6 +111,17 @@ Experienced in programming languages, data manipulation, and automation of bioin
 
 <span class="output-success">Junior Bioinformatician</span> @ Unipath Laboratories, India (Sep 2023 - Jul 2024)
   - Developed Metagenomics and WES pipelines, including CNV analysis.
+            `,
+            'education': `
+<span class="output-success">[+] Loading education credentials...</span>
+<span class="output-success">--------------------------------------------------</span>
+<span class="output-success">MSc in Bioinformatics</span> (2021-2023)
+  - Pondicherry University, India
+  - CGPA: 8.69/10
+
+<span class="output-success">BSc in Biotechnology (Hons)</span> (2018-2021)
+  - The University of Burdwan, India
+  - CGPA: 8.45/10
             `,
             'skills': `
 <span class="output-success">[+] Compiling skill matrix...</span>
@@ -187,6 +198,9 @@ ${this.about}
 <br><span class="output-success">--- EXPERIENCE ---</span>
 ${this.experience}
 
+<br><span class="output-success">--- EDUCATION ---</span>
+${this.education}
+
 <br><span class="output-success">--- SKILLS ---</span>
 ${this.skills}
 
@@ -203,6 +217,14 @@ ${this.social}
             }
         };
 
+        const aliases = {
+            'xp': 'experience',
+            'edu': 'education',
+            'sk': 'skills',
+            'proj': 'projects',
+            'pubs': 'publications'
+        };
+
         const welcomeMessage = `
 <span class="output-success">Welcome to Rajarshi Mondal's Genomic Console.</span>
 Type '<span class="output-command">help</span>' to see a list of available commands.
@@ -217,7 +239,7 @@ Type '<span class="output-command">help</span>' to see a list of available comma
 
         input.addEventListener('keydown', async (e) => {
             if (e.key === 'Enter') {
-                const command = input.value.trim().toLowerCase();
+                let command = input.value.trim().toLowerCase();
                 input.value = '';
 
                 const commandOutput = document.createElement('div');
@@ -225,6 +247,11 @@ Type '<span class="output-command">help</span>' to see a list of available comma
                 output.appendChild(commandOutput);
 
                 if (command) {
+                    // Check for alias and replace with full command
+                    if (aliases[command]) {
+                        command = aliases[command];
+                    }
+
                     commandHistory.unshift(command);
                     historyIndex = -1;
                     const responseDiv = document.createElement('div');
