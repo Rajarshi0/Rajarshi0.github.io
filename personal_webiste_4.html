@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajarshi Mondal - Genomic Console</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fira Code', monospace;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        #terminal {
+            height: 100vh;
+            padding: 2rem;
+            overflow-y: auto;
+            scrollbar-width: none; /* Firefox */
+        }
+        #terminal::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+        .prompt::before {
+            content: 'user@rajarshi.dev:~$ ';
+            color: #58a6ff;
+        }
+        #input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #c9d1d9;
+            width: calc(100% - 18ch);
+        }
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: #c9d1d9;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { background-color: transparent }
+            50% { background-color: #c9d1d9; }
+        }
+        .output-command {
+            color: #58a6ff;
+        }
+        .output-text {
+            white-space: pre-wrap;
+            color: #8b949e;
+        }
+        .output-success {
+            color: #3fb950;
+        }
+        .output-error {
+            color: #f85149;
+        }
+        .output-link {
+            color: #58a6ff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+        <div id="output"></div>
+        <div class="flex items-center">
+            <span class="prompt"></span>
+            <input type="text" id="input" autofocus>
+            <span class="cursor"></span>
+        </div>
+    </div>
+
+    <script>
+        const terminal = document.getElementById('terminal');
+        const output = document.getElementById('output');
+        const input = document.getElementById('input');
+        let commandHistory = [];
+        let historyIndex = -1;
+
+        const commands = {
+            'help': 'Available commands:\n  <span class="output-success">about</span>         - Who is Rajarshi Mondal?\n  <span class="output-success">experience</span>    - View professional experience\n  <span class="output-success">skills</span>        - List technical skills\n  <span class="output-success">projects</span>      - See key projects\n  <span class="output-success">publications</span>  - Read my published work\n  <span class="output-success">contact</span>       - Get in touch\n  <span class="output-success">social</span>        - Connect on social media\n  <span class="output-success">clear</span>         - Clear the terminal screen\n  <span class="output-success">dna</span>           - Fun animation',
+            'about': `
+<img src="https://lh3.googleusercontent.com/d/1XkrVnKEbkr4hxbvVVG8DQ9b2_QGe542a" 
+     alt="Rajarshi Mondal" 
+     class="rounded-full w-32 h-32 float-left mr-6 mb-4 shadow-lg"
+     onerror="this.onerror=null; this.style.display='none'; document.getElementById('output').innerHTML += '<div class=\\'output-error\\'>[System Error] Profile image failed to load. The image host (e.g., Google Drive) may be blocking it, or the file is not shared publicly.</div>'">
+<span class="output-success">Rajarshi Mondal</span>
+Bioinformatician | Computational Biologist
+
+Results-driven bioinformatician with a solid understanding of computational biology and genomic analysis. Proficient in utilizing bioinformatics tools and methodologies to analyze large-scale genomic datasets and derive meaningful insights.
+
+Experienced in programming languages, data manipulation, and automation of bioinformatics workflows. Committed to advancing the field of bioinformatics and making significant contributions to genomics and precision medicine.
+            `,
+            'experience': `
+<span class="output-success">[+] Initializing professional experience sequence...</span>
+<span class="output-success">--------------------------------------------------</span>
+<span class="output-success">Research Assistant</span> @ IIT Delhi, India (Jul 2025 - Present)
+  - Focused on RNAseq and Spatial Transcriptomics.
+
+<span class="output-success">Pre-Doctoral Fellow</span> @ IISc Bengaluru, India (Jan 2025 - Jul 2025)
+  - Explored an algorithm project on ONT reads error correction.
+
+<span class="output-success">Junior Research Fellow</span> @ IIIT Delhi, India (Aug 2024 - Dec 2024)
+  - Worked on 3D Genomics and Single-cell genomics.
+
+<span class="output-success">Junior Bioinformatician</span> @ Unipath Laboratories, India (Sep 2023 - Jul 2024)
+  - Developed Metagenomics and WES pipelines, including CNV analysis.
+            `,
+            'skills': `
+<span class="output-success">[+] Compiling skill matrix...</span>
+<span class="output-success">--------------------------------------------------</span>
+<span class="output-success">Programming & Scripting:</span> Python, R, Bash, Java, C, Perl
+<span class="output-success">NGS Analysis:</span> Multi-omics, Transcriptomics, Metagenomics, WES, WGS, CNV
+<span class="output-success">Genomic Tools:</span> GATK, Samtools, Bcftools, BLAST, BWA-MEM, Minimap2
+<span class="output-success">Computational Tools:</span> HPCs, AWS, Nextflow, AutoDock, GROMACS, RStudio, Jupyter
+            `,
+            'projects': `
+<span class="output-success">[+] Loading project data...</span>
+<span class="output-success">--------------------------------------------------</span>
+<span class="output-success">CML Investigation (Master's Project)</span>
+  - Investigated translocation activation mechanisms in Chronic Myeloid Leukemia.
+  - Utilized custom WES to find putative driver mutations.
+
+<span class="output-success">eQTL Analysis for Alzheimer's (HackBio Project)</span>
+  - Analyzed expression Quantitative Trait Loci (eQTL).
+  - Conducted gene enrichment and pathway analyses.
+            `,
+            'publications': `
+<span class="output-success">[+] Fetching publication records...</span>
+<span class="output-success">--------------------------------------------------</span>
+1. Dwarshuis, N., Kalra, D., McDaniel, J. et al. The GIAB genomic stratifications resource for human reference genomes. Nat Commun 15, 9029 (2024).
+   <a href="https://doi.org/10.1038/s41467-024-53260-y" target="_blank" class="output-link">Read More</a>
+
+2. Walker K, Kalra D, Lowdon R et al. The Third International Hackathon... F1000Research, 2022, 11:530.
+   <a href="https://doi.org/10.12688/f1000research.110194.1" target="_blank" class="output-link">Read More</a>
+            `,
+            'contact': `
+<span class="output-success">[+] Establishing contact protocols...</span>
+<span class="output-success">--------------------------------------------------</span>
+<span class="output-success">Email:</span> <a href="mailto:rajarshimondal92@gmail.com" class="output-link">rajarshimondal92@gmail.com</a>
+            `,
+            'social': `
+<span class="output-success">[+] Connecting to social networks...</span>
+<span class="output-success">--------------------------------------------------</span>
+<span class="output-success">LinkedIn:</span> <a href="https://www.linkedin.com/in/rajarshi-mondal/" target="_blank" class="output-link">linkedin.com/in/rajarshi-mondal</a>
+<span class="output-success">GitHub:</span>   <a href="https://rajarshi0.github.io/" target="_blank" class="output-link">github.com/rajarshi0</a>
+<span class="output-success">Scholar:</span>  <a href="https://scholar.google.com/citations?user=KFJxePUAAAAJ&hl=en" target="_blank" class="output-link">Google Scholar Profile</a>
+            `,
+            'clear': () => {
+                output.innerHTML = '';
+                return '';
+            },
+            'dna': async () => {
+                const dnaSequence = "ATCG".split('');
+                const colors = ['#58a6ff', '#3fb950', '#f85149', '#f0a202'];
+                let dnaStrand = '';
+
+                for (let i = 0; i < 50; i++) {
+                    const base = dnaSequence[Math.floor(Math.random() * dnaSequence.length)];
+                    const color = colors[dnaSequence.indexOf(base)];
+                    dnaStrand += `<span style="color:${color}">${base}</span>`;
+                }
+                
+                let tempOutput = document.createElement('div');
+                tempOutput.innerHTML = `[+] Simulating DNA sequence...<br>${dnaStrand}`;
+                output.appendChild(tempOutput);
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                tempOutput.innerHTML += `<br>[+] Sequence analysis complete.`;
+                terminal.scrollTop = terminal.scrollHeight;
+                return '';
+            }
+        };
+
+        const welcomeMessage = `
+<span class="output-success">Welcome to Rajarshi Mondal's Genomic Console.</span>
+Type '<span class="output-command">help</span>' to see a list of available commands.
+
+`;
+
+        function typeMessage(element, message, callback) {
+            let i = 0;
+            element.innerHTML = '';
+            const typing = setInterval(() => {
+                if (i < message.length) {
+                    element.innerHTML += message.charAt(i);
+                    i++;
+                    terminal.scrollTop = terminal.scrollHeight;
+                } else {
+                    clearInterval(typing);
+                    if (callback) callback();
+                }
+            }, 10);
+        }
+        
+        function displayWelcome() {
+            const welcomeDiv = document.createElement('div');
+            welcomeDiv.innerHTML = welcomeMessage;
+            output.appendChild(welcomeDiv);
+        }
+
+        input.addEventListener('keydown', async (e) => {
+            if (e.key === 'Enter') {
+                const command = input.value.trim().toLowerCase();
+                input.value = '';
+
+                const commandOutput = document.createElement('div');
+                commandOutput.innerHTML = `<span class="prompt"></span>${command}`;
+                output.appendChild(commandOutput);
+
+                if (command) {
+                    commandHistory.unshift(command);
+                    historyIndex = -1;
+                    const responseDiv = document.createElement('div');
+                    responseDiv.classList.add('output-text');
+                    output.appendChild(responseDiv);
+
+                    if (commands[command]) {
+                        const response = commands[command];
+                        if (typeof response === 'function') {
+                            await response();
+                        } else {
+                            responseDiv.innerHTML = response;
+                        }
+                    } else {
+                        responseDiv.innerHTML = `<span class="output-error">Error: Command not found: ${command}. Type 'help' for a list of commands.</span>`;
+                    }
+                }
+                terminal.scrollTop = terminal.scrollHeight;
+            } else if (e.key === 'ArrowUp') {
+                if (commandHistory.length > 0 && historyIndex < commandHistory.length - 1) {
+                    historyIndex++;
+                    input.value = commandHistory[historyIndex];
+                }
+            } else if (e.key === 'ArrowDown') {
+                if (historyIndex > 0) {
+                    historyIndex--;
+                    input.value = commandHistory[historyIndex];
+                } else {
+                    historyIndex = -1;
+                    input.value = '';
+                }
+            }
+        });
+
+        terminal.addEventListener('click', () => {
+            input.focus();
+        });
+
+        displayWelcome();
+    </script>
+</body>
+</html>
