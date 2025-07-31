@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* Hardcoded dark theme for reliability */
         body {
             font-family: 'Fira Code', monospace;
             background-color: #0d1117;
@@ -43,7 +44,7 @@
         }
         @keyframes blink {
             from, to { background-color: transparent }
-            50% { background-color: #c9d1d9; }
+            50% { background-color: currentColor; }
         }
         .output-command {
             color: #58a6ff;
@@ -65,7 +66,7 @@
     </style>
 </head>
 <body>
-    <div id="terminal">
+    <div id="terminal" class="relative">
         <div id="output"></div>
         <div class="flex items-center">
             <span class="prompt"></span>
@@ -81,8 +82,9 @@
         let commandHistory = [];
         let historyIndex = -1;
 
+        // --- COMMANDS OBJECT ---
         const commands = {
-            'help': 'Available commands:\n  <span class="output-success">about</span>         - Who is Rajarshi Mondal?\n  <span class="output-success">experience</span>    - View professional experience\n  <span class="output-success">skills</span>        - List technical skills\n  <span class="output-success">projects</span>      - See key projects\n  <span class="output-success">publications</span>  - Read my published work\n  <span class="output-success">contact</span>       - Get in touch\n  <span class="output-success">social</span>        - Connect on social media\n  <span class="output-success">clear</span>         - Clear the terminal screen\n  <span class="output-success">dna</span>           - Fun animation',
+            'help': 'Available commands:\n  <span class="output-success">about</span>         - Who is Rajarshi Mondal?\n  <span class="output-success">experience</span>    - View professional experience\n  <span class="output-success">skills</span>        - List technical skills\n  <span class="output-success">projects</span>      - See key projects\n  <span class="output-success">publications</span>  - Read my published work\n  <span class="output-success">contact</span>       - Get in touch\n  <span class="output-success">social</span>        - Connect on social media\n  <span class="output-success">clear</span>         - Clear the terminal screen\n  <span class="output-success">dna</span>           - Fun animation\n  <span class="output-success">all</span>           - Display all info at once',
             'about': `
 <img src="https://lh3.googleusercontent.com/d/1XkrVnKEbkr4hxbvVVG8DQ9b2_QGe542a" 
      alt="Rajarshi Mondal" 
@@ -156,12 +158,12 @@ Experienced in programming languages, data manipulation, and automation of bioin
             },
             'dna': async () => {
                 const dnaSequence = "ATCG".split('');
-                const colors = ['#58a6ff', '#3fb950', '#f85149', '#f0a202'];
+                const colors = {'A':'#58a6ff', 'T':'#f85149', 'C':'#f0a202', 'G':'#3fb950'};
                 let dnaStrand = '';
 
                 for (let i = 0; i < 50; i++) {
                     const base = dnaSequence[Math.floor(Math.random() * dnaSequence.length)];
-                    const color = colors[dnaSequence.indexOf(base)];
+                    const color = colors[base];
                     dnaStrand += `<span style="color:${color}">${base}</span>`;
                 }
                 
@@ -173,6 +175,31 @@ Experienced in programming languages, data manipulation, and automation of bioin
                 tempOutput.innerHTML += `<br>[+] Sequence analysis complete.`;
                 terminal.scrollTop = terminal.scrollHeight;
                 return '';
+            },
+            'all': function() {
+                return `
+<div class="output-text">
+<span class="output-success">--- ALL INFO ---</span>
+
+<br><span class="output-success">--- ABOUT ---</span>
+${this.about}
+
+<br><span class="output-success">--- EXPERIENCE ---</span>
+${this.experience}
+
+<br><span class="output-success">--- SKILLS ---</span>
+${this.skills}
+
+<br><span class="output-success">--- PROJECTS ---</span>
+${this.projects}
+
+<br><span class="output-success">--- PUBLICATIONS ---</span>
+${this.publications}
+
+<br><span class="output-success">--- SOCIAL ---</span>
+${this.social}
+</div>
+                `;
             }
         };
 
@@ -181,21 +208,6 @@ Experienced in programming languages, data manipulation, and automation of bioin
 Type '<span class="output-command">help</span>' to see a list of available commands.
 
 `;
-
-        function typeMessage(element, message, callback) {
-            let i = 0;
-            element.innerHTML = '';
-            const typing = setInterval(() => {
-                if (i < message.length) {
-                    element.innerHTML += message.charAt(i);
-                    i++;
-                    terminal.scrollTop = terminal.scrollHeight;
-                } else {
-                    clearInterval(typing);
-                    if (callback) callback();
-                }
-            }, 10);
-        }
         
         function displayWelcome() {
             const welcomeDiv = document.createElement('div');
@@ -222,7 +234,10 @@ Type '<span class="output-command">help</span>' to see a list of available comma
                     if (commands[command]) {
                         const response = commands[command];
                         if (typeof response === 'function') {
-                            await response();
+                            const result = response.call(commands);
+                            if (result) {
+                                responseDiv.innerHTML = result;
+                            }
                         } else {
                             responseDiv.innerHTML = response;
                         }
